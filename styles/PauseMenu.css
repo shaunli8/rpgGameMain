@@ -1,0 +1,106 @@
+/* Style for the pause menu */
+#pauseMenu {
+    position: fixed;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+#pauseMenuContent {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px 60px; /* Set padding for the entire content area */
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Arrange items in a column (top to bottom) */
+    align-items: center; /* Center items horizontally */
+}
+
+#resumeButton {
+    background: rgb(211, 211, 211);
+    width: 150px; /* Set the width to 15px */
+    height: 50px; /* Set the height to 20px */
+    margin: 5px 0; /* Add vertical margin for spacing between buttons */
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-weight: bold;
+    border-radius: 10px; transition: background-color 0.3s; /* Add a smooth transition for the background color change */
+}
+
+#resumeButton:hover {
+    background-color: rgb(135, 254, 124); /* Change the background color to red on hover */
+}
+
+#restartButton {
+    background: rgb(211, 211, 211);
+    width: 150px; /* Set the width to 15px */
+    height: 50px; /* Set the height to 20px */
+    margin: 5px 0; /* Add vertical margin for spacing between buttons */
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background-color 0.3s; /* Add a smooth transition for the background color change */
+    
+}
+
+#restartButton:hover {
+    background-color: rgb(255, 75, 75); /* Change the background color to red on hover */
+}
+
+#gameTitle{
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: white;
+}
+
+/* Styles for LED Lines */
+.led-line {
+    height: 2px; /* Adjust the height of the lines */
+    background-color: white;
+    position: absolute;
+    animation-duration: 4s; /* Adjust the animation duration */
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.led-line.led1 {
+    top: 0;
+    left: 0;
+    width: 100%; /* Line spans the top */
+    animation-name: moveLedTop;
+}
+
+.led-line.led2 {
+    top: 0;
+    right: 0;
+    height: 100%; /* Line spans the right */
+    animation-name: moveLedRight;
+}
+
+/* Add more styles for additional LED lines */
+
+/* Keyframe animation for moving LED Lines along the top */
+@keyframes moveLedTop {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Keyframe animation for moving LED Lines along the right side */
+@keyframes moveLedRight {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+/* Hide the pause menu by default */
+.hidden {
+    display: none !important; 
+}
